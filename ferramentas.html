@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferramentas Trabalhistas — Referências</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛠️ Ferramentas Trabalhistas</h1>
+      <p class="subtitle">Referências rápidas para cálculos de rescisão • <a href="https://calculadoratrabalhista.net.br" target="_blank">calculadoratrabalhista.net.br</a></p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="inss">INSS 2025</button>
+      <button class="tab" data-tab="irrf">IRRF</button>
+      <button class="tab" data-tab="prazos">Prazos</button>
+      <button class="tab" data-tab="checklist">Checklist</button>
+    </nav>
+
+    <!-- TAB INSS -->
+    <section id="tab-inss" class="tab-content active">
+      <h2>📊 Tabela INSS — 2025</h2>
+      <table>
+        <thead>
+          <tr><th>Faixa Salarial (R$)</th><th>Alíquota</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Até 1.518,00</td><td>7,5%</td></tr>
+          <tr><td>De 1.518,01 até 2.793,88</td><td>9,0%</td></tr>
+          <tr><td>De 2.793,89 até 4.190,83</td><td>12,0%</td></tr>
+          <tr><td>De 4.190,84 até 8.157,41</td><td>14,0%</td></tr>
+        </tbody>
+      </table>
+      <p class="ref">Fonte: Tabela progressiva INSS. Teto: R$ 8.157,41.</p>
+    </section>
+
+    <!-- TAB IRRF -->
+    <section id="tab-irrf" class="tab-content">
+      <h2>📊 Tabela IRRF — 2025</h2>
+      <table>
+        <thead>
+          <tr><th>Faixa Salarial (R$)</th><th>Alíquota</th><th>Parcela a Deduzir</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Até 2.259,20</td><td>Isento</td><td>—</td></tr>
+          <tr><td>De 2.259,21 até 2.826,65</td><td>7,5%</td><td>R$ 169,44</td></tr>
+          <tr><td>De 2.826,66 até 3.751,05</td><td>15,0%</td><td>R$ 381,44</td></tr>
+          <tr><td>De 3.751,06 até 4.664,68</td><td>22,5%</td><td>R$ 662,77</td></tr>
+          <tr><td>Acima de 4.664,68</td><td>27,5%</td><td>R$ 884,96</td></tr>
+        </tbody>
+      </table>
+      <p class="ref">Dedução por dependente: R$ 189,59. Desconto simplificado: R$ 564,80.</p>
+    </section>
+
+    <!-- TAB PRAZOS -->
+    <section id="tab-prazos" class="tab-content">
+      <h2>📅 Prazos Trabalhistas</h2>
+      <ul class="prazo-list">
+        <li><strong>Aviso Prévio:</strong> 30 a 90 dias (proporcional ao tempo de serviço)</li>
+        <li><strong>Pagamento da Rescisão:</strong> Até 10 dias corridos após o término do contrato</li>
+        <li><strong>Homologação:</strong> Necessária para contratos com mais de 1 ano (sindicato ou MTE)</li>
+        <li><strong>Saque FGTS:</strong> Liberado após comprovação do desligamento</li>
+        <li><strong>Seguro-Desemprego:</strong> Requerimento entre 7º e 120º dias</li>
+      </ul>
+    </section>
+
+    <!-- TAB CHECKLIST -->
+    <section id="tab-checklist" class="tab-content">
+      <h2>✅ Checklist Rescisão</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Saldo de salário</li>
+        <li><input type="checkbox"> Aviso prévio (trabalhado ou indenizado)</li>
+        <li><input type="checkbox"> Férias vencidas + ⅓</li>
+        <li><input type="checkbox"> Férias proporcionais + ⅓</li>
+        <li><input type="checkbox"> 13º salário proporcional</li>
+        <li><input type="checkbox"> FGTS + multa de 40%</li>
+        <li><input type="checkbox"> Guias para saque FGTS / Seguro-Desemprego</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>➡️ Para cálculos completos e precisos: <a href="https://calculadoratrabalhista.net.br" target="_blank">calculadoratrabalhista.net.br</a></p>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('.tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
